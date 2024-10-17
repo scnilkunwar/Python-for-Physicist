@@ -1,4 +1,8 @@
-# Python for MSc Physics
+<div align="center">
+  <h1> Python for Physicist - Course Outline</h1>
+</div>
+
+![Python for Physicist](./images/Banner.png)
 
 Welcome to the **Python for MSc Physics** repository! This repository is designed to teach Python programming from basics to advanced levels, specifically tailored for MSc Physics students. The content focuses on Python’s practical applications in solving physics problems, data analysis, and scientific computing.
 
