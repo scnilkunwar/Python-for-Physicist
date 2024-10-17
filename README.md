@@ -4,7 +4,7 @@
 
 ![Python for Physicist](./images/Banner.png)
 
-Welcome to the **Python for MSc Physics** repository! This repository is designed to teach Python programming from basics to advanced levels, specifically tailored for MSc Physics students. The content focuses on Python’s practical applications in solving physics problems, data analysis, and scientific computing.
+Welcome to the **Python for Physicist** repository! This repository is designed to teach Python programming from basics to advanced levels, specifically tailored for Physics students. The content focuses on Python’s practical applications in solving physics problems, data analysis, and scientific computing.
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ Welcome to the **Python for MSc Physics** repository! This repository is designe
 
 ## Introduction
 
-This repository is aimed at MSc Physics students who want to learn Python programming and apply it to solve physics-related problems. Whether you are new to programming or have some prior experience, this course will help you build a solid foundation and advance to more specialized topics like scientific computing, data analysis, and simulations in physics.
+This repository is aimed at Physics students who want to learn Python programming and apply it to solve physics-related problems. Whether you are new to programming or have some prior experience, this course will help you build a solid foundation and advance to more specialized topics like scientific computing, data analysis, and simulations in physics.
 
 ---
 
