@@ -43,7 +43,7 @@ To get started with this course, follow these steps:
    - [Jupyter Notebook](https://jupyter.org/)
 3. **Clone the repository**:
    ```bash
-   git clone https://github.com/scnilkunwar/Python-for-MSc-Physics.git
+   git clone https://github.com/scnilkunwar/Python-for-Physicist.git
 
 
 # Course Outline
