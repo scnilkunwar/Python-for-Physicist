@@ -1,0 +1,283 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,       % Font style for code
+    keywordstyle=\bfseries\color{teal},      % Style for keywords
+    stringstyle=\color{orange},              % Style for strings
+    commentstyle=\color{green!50!black}\itshape, % Style for comments
+    numbers=left,                            % Line numbering
+    numberstyle=\tiny\color{gray},           % Style for line numbers
+    stepnumber=1,                            % Increment of line numbers
+    numbersep=8pt,                           % Space between numbers and code
+    frame=single,                            % Frame around code
+    rulecolor=\color{black},                 % Frame color
+    backgroundcolor=\color{white!97!gray},   % Code background color
+    breaklines=true,                         % Automatic line breaks
+    captionpos=b,                            % Position of captions
+    showstringspaces=false,                  % Don't show spaces in strings
+    tabsize=4,                               % Tab size
+    morekeywords={as, assert, async, await}, % Additional Python keywords
+    xleftmargin=0.5cm                        % Left margin space
+}
+
+\geometry{a4paper, margin=1in}
+
+\title{Linear Algebra Functions in NumPy}
+\author{Compiled by Sunil Kunwar}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Basic Linear Algebra Functions}
+
+\subsection{Matrix Operations}
+\subsubsection{Matrix Multiplication}
+\textbf{Description:} Computes the dot product of two arrays or matrices.
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+
+# Dot product
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
+dot_product = np.dot(a, b) #can be done using @ operator
+\end{lstlisting}
+
+\textbf{Description:} Performs matrix multiplication, equivalent to the dot product for 2-D arrays.
+
+\begin{lstlisting}[language=Python]
+# Matrix product
+mat_product = np.matmul(a, b)
+\end{lstlisting}
+
+\textbf{Description:} Computes the dot product of two vectors.
+
+\begin{lstlisting}[language=Python]
+# Dot product of two vectors
+vdot_product = np.vdot(a[0], b[0])
+\end{lstlisting}
+
+\subsubsection{Transpose}
+\textbf{Description:} Transposes the given array, flipping it over its diagonal.
+
+\begin{lstlisting}[language=Python]
+# Transpose of an array
+transposed_a = np.transpose(a)
+\end{lstlisting}
+
+\textbf{Description:} Swaps two axes of an array.
+
+\begin{lstlisting}[language=Python]
+# Swap two axes of an array
+swapped_axes = np.swapaxes(a, 0, 1)
+\end{lstlisting}
+
+\subsubsection{Trace}
+\textbf{Description:} Computes the sum of the diagonal elements of a matrix.
+
+\begin{lstlisting}[language=Python]
+# Trace of an array
+trace_a = np.trace(a)
+\end{lstlisting}
+
+\section{Solving Linear Systems}
+
+\subsection{Solve \(Ax = b\)}
+\textbf{Description:} Solves the linear equation \(Ax = b\) for \(x\).
+
+\begin{lstlisting}[language=Python]
+b = np.array([1, 2])
+x = np.linalg.solve(a, b)  # Solving for x
+\end{lstlisting}
+
+\subsection{Matrix Inversion}
+\textbf{Description:} Computes the inverse of a square matrix.
+
+\begin{lstlisting}[language=Python]
+# Compute the inverse of a matrix
+inv_a = np.linalg.inv(a)
+\end{lstlisting}
+
+\subsection{Least-Squares Solution}
+\textbf{Description:} Computes the least-squares solution to a linear matrix equation.
+
+\begin{lstlisting}[language=Python]
+# Least-squares solution
+x_least_squares, residuals, rank, s = np.linalg.lstsq(a, b, rcond=None)
+\end{lstlisting}
+
+\section{Decompositions}
+
+\subsection{Eigenvalue Decomposition}
+\textbf{Description:} Computes the eigenvalues and right eigenvectors of a square array.
+
+\begin{lstlisting}[language=Python]
+# Eigenvalue and eigenvector computation
+eigenvalues, eigenvectors = np.linalg.eig(a)
+\end{lstlisting}
+
+\subsection{Singular Value Decomposition (SVD)}
+\textbf{Description:} Factorizes a matrix into three matrices, representing its intrinsic properties.
+
+\begin{lstlisting}[language=Python]
+# Singular Value Decomposition
+u, s, vh = np.linalg.svd(a)
+\end{lstlisting}
+
+\subsection{Cholesky Decomposition}
+\textbf{Description:} Decomposes a positive-definite matrix into a lower triangular matrix and its transpose.
+
+\begin{lstlisting}[language=Python]
+# Cholesky decomposition
+L = np.linalg.cholesky(a)
+\end{lstlisting}
+
+\subsection{QR Decomposition}
+\textbf{Description:} Decomposes a matrix into an orthogonal matrix and an upper triangular matrix.
+
+\begin{lstlisting}[language=Python]
+# QR decomposition
+q, r = np.linalg.qr(a)
+\end{lstlisting}
+
+\section{Norms and Determinants}
+
+\subsection{Norms}
+\textbf{Description:} Computes the norm (length) of a vector or the Frobenius norm of a matrix.
+
+\begin{lstlisting}[language=Python]
+# Matrix or vector norm
+norm_a = np.linalg.norm(a, ord=None)
+\end{lstlisting}
+
+\subsection{Determinant}
+\textbf{Description:} Computes the determinant of a square matrix.
+
+\begin{lstlisting}[language=Python]
+# Compute the determinant of a matrix
+det_a = np.linalg.det(a)
+\end{lstlisting}
+
+\section{Other Useful Functions}
+
+\subsection{Matrix Rank}
+\textbf{Description:} Returns the rank of a matrix, which is the dimension of the vector space generated by its rows or columns.
+
+\begin{lstlisting}[language=Python]
+# Return the rank of a matrix
+rank_a = np.linalg.matrix_rank(a)
+\end{lstlisting}
+
+\subsection{Condition Number}
+\textbf{Description:} Computes the condition number of a matrix, indicating how sensitive the solution of a system of linear equations is to changes in the input.
+
+\begin{lstlisting}[language=Python]
+# Compute the condition number of a matrix
+cond_a = np.linalg.cond(a, p=None)
+\end{lstlisting}
+
+\subsection{Pseudo-Inverse}
+\textbf{Description:} Computes the Moore-Penrose pseudo-inverse of a matrix.
+
+\begin{lstlisting}[language=Python]
+# Compute the Moore-Penrose pseudo-inverse
+pseudo_inv_a = np.linalg.pinv(a)
+\end{lstlisting}
+
+\subsection{Cross Product}
+\textbf{Description:} Computes the cross product of two 3-dimensional vectors.
+
+\begin{lstlisting}[language=Python]
+# Compute the cross product of two 3D vectors
+a_vec = np.array([1, 2, 3])
+b_vec = np.array([4, 5, 6])
+cross_product = np.cross(a_vec, b_vec)
+\end{lstlisting}
+
+\section{Utility Functions for Arrays}
+
+\subsection{Identity Matrix}
+\textbf{Description:} Returns a 2D array with ones on the diagonal and zeros elsewhere.
+
+\begin{lstlisting}[language=Python]
+# Return a 2D array with ones on the diagonal
+identity_matrix = np.eye(3)
+\end{lstlisting}
+
+\subsection{Diagonal}
+\textbf{Description:} Extracts or constructs a diagonal array.
+
+\begin{lstlisting}[language=Python]
+# Extract or construct a diagonal array
+diagonal_array = np.diag([1, 2, 3])
+\end{lstlisting}
+
+\subsection{Flattening}
+\textbf{Description:} Returns a contiguous flattened array.
+
+\begin{lstlisting}[language=Python]
+# Return a flattened array
+flattened_a = np.ravel(a)
+\end{lstlisting}
+
+\section{Advanced Linear Algebra Functions}
+
+\subsection{Kronecker Product}
+\textbf{Description:} Computes the Kronecker product of two arrays.
+
+\begin{lstlisting}[language=Python]
+# Compute the Kronecker product of two arrays
+kron_product = np.kron(a, b)
+\end{lstlisting}
+
+\subsection{Tensor Dot Product}
+\textbf{Description:} Computes the tensor dot product along specified axes.
+
+\begin{lstlisting}[language=Python]
+# Compute the tensor dot product along specified axes
+tensor_dot = np.tensordot(a, b, axes=1)
+\end{lstlisting}
+
+\subsection{Element-wise Multiplication}
+\textbf{Description:} Performs element-wise multiplication of two arrays.
+
+\begin{lstlisting}[language=Python]
+# Element-wise multiplication
+hadamard_product = np.multiply(a, b)
+\end{lstlisting}
+
+\subsection{Matrix Power}
+\textbf{Description:} Raises a square matrix to an integer power \(n\).
+
+\begin{lstlisting}[language=Python]
+# Raise a square matrix to the integer power n
+matrix_power = np.linalg.matrix_power(a, 2)
+\end{lstlisting}
+
+\section{Higher-Dimensional Tensors}
+
+\subsection{Mode Product of a Tensor}
+\textbf{Description:} Computes the mode product of tensors.
+
+\begin{lstlisting}[language=Python]
+# Example of using einsum for tensor operations
+tensor_product = np.einsum('ij,jk->ik', a, b)
+\end{lstlisting}
+
+\section{Special Matrix Functions}
+
+\subsection{Hermitian Matrix Check}
+\textbf{Description:} Checks if a matrix is Hermitian or symmetric.
+
+\begin{lstlisting}[language=Python]
+# Check if a matrix is Hermitian or symmetric
+is_hermitian = np.iscomplexobj(a)
+\end{lstlisting}
+\end{document}
