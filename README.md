@@ -18,10 +18,6 @@ Welcome to the **Python for Physicist** repository! This repository is designed 
     - [Pandas for Data Analysis](#5-pandas-for-data-analysis)
     - [SymPy for Symbolic Computation](#6-sympy-for-symbolic-computation)
     - [SciPy for Scientific Computing](#7-scipy-for-scientific-computing)
-    - [Object-Oriented Programming](#8-object-oriented-programming)
-    - [Error Handling and Debugging](#9-error-handling-and-debugging)
-    - [Parallel Computing](#10-parallel-computing)
-    - [Machine Learning Basics (Optional)](#11-machine-learning-basics-optional)
     - [Final Projects](#12-final-projects)
 4. [Resources](#resources)
 
@@ -108,39 +104,7 @@ This course is structured into multiple modules, progressing from Python basics 
 
 ---
 
-### 8. **Object-Oriented Programming**
-   - Modeling physical systems using object-oriented principles.
-   - **Example Exercises**:
-     - Create a class for a particle and simulate its motion under different forces.
-     - Implement a simple physics engine for collision detection.
-
----
-
-### 9. **Error Handling and Debugging**
-   - Techniques for debugging and handling errors in physics simulations.
-   - **Example Exercises**:
-     - Identify and fix bugs in a simulation of planetary motion.
-     - Simulate error scenarios in experimental calculations.
-
----
-
-### 10. **Parallel Computing**
-   - Performing parallel computations to speed up simulations and analyses.
-   - **Example Exercises**:
-     - Simulate a Monte Carlo method with parallel processing for efficiency.
-     - Run multiple experiments in parallel to analyze quantum systems.
-
----
-
-### 11. **Machine Learning Basics (Optional)**
-   - Brief introduction to machine learning and its applications in physics.
-   - **Example Exercises**:
-     - Build a simple linear regression model to predict physical properties.
-     - Use machine learning to classify materials based on physical data.
-
----
-
-### 12. **Final Projects**
+### 8. **Final Projects**
    - Apply everything you've learned to a real-world physics problem.
    - **Project Ideas**:
      - Simulate the motion of planets in a solar system.
